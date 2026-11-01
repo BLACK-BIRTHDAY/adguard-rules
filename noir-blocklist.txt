@@ -1,6 +1,6 @@
-! Title: NOIR Android Privacy & Telemetry Blocklist (ColorOS / GMS Safe)
-! Description: Generated from NOIR audit on OnePlus/OPPO ColorOS device. Protects Google services while blocking telemetry and ad tracking.
-! Version: 1.0.1
+! Title: NOIR Android Privacy & Telemetry Blocklist (Multi-Device: ColorOS & MIUI / HyperOS)
+! Description: Comprehensive privacy & ad-blocking list generated from NOIR audits on OnePlus/OPPO and Xiaomi Pad devices. Protects Google services while blocking system telemetry and ad tracking.
+! Version: 1.1.0
 ! Last modified: 2026-11-01
 ! Homepage: https://github.com/BLACK-BIRTHDAY/adguard-rules
 !
@@ -17,7 +17,35 @@
 @@||googleusercontent.com^
 
 ! =========================================================
-! 2. ColorOS / 一加 / 欢太 系统级广告与内部遥测
+! 2. 常用业务与工具放行白名单（防误杀）
+! =========================================================
+@@||mediafire.com^
+@@||bing.com^
+@@||amap.com^
+
+! =========================================================
+! 3. 小米 / MIUI / HyperOS 系统级广告与隐私遥测（平板与手机通用）
+! =========================================================
+! 小米安全中心与隐私日志上报 (SecurityCenter / CleanMaster / SecurityCore)
+||sec.miui.com^
+||sec.intl.miui.com^
+||privacy.api.intl.miui.com^
+||api.comm.miui.com^
+||eps.caict.ac.cn^
+||cloud.weizhi.com^
+
+! 小爱同学、小爱视觉与语音唤醒埋点 (XiaoAI / AiAsst / VoiceTrigger)
+||xiaomixiaoai.com^
+||ai.srv^
+||tracker.ai.xiaomi.com^
+||tracker-preview.ai.xiaomi.com^
+
+! 小米搜索与推送数据统计 (Global Search / MIPush Analytics)
+||global.search.xiaomi.net^
+||upload-data-api.xmpush.xiaomi.net^
+
+! =========================================================
+! 4. ColorOS / 一加 / 欢太 系统级广告与内部遥测（手机端）
 ! =========================================================
 ||ads.heytapmobi.com^
 ||api-audit.heytapmobi.com^
@@ -34,9 +62,9 @@
 ||mdp-*.heytapmobi.com^
 
 ! =========================================================
-! 3. 第三方统计、埋点、崩溃日志与广告联盟 SDK
+! 5. 第三方统计、埋点、崩溃日志与广告联盟 SDK
 ! =========================================================
-! 字节跳动 / 火山引擎埋点（小布助手、南航、值得买等内置）
+! 字节跳动 / 火山引擎埋点（小爱/小布助手、南航、值得买等内置）
 ||snssdk.com^
 ||apmplus.volces.com^
 
@@ -54,15 +82,19 @@
 ||bugtrace.3g.qq.com^
 ||rttgpsreport.map.qq.com^
 
-! 百度地图与百度输入法后台遥测
+! 百度系后台遥测、内核统计与图谱日志
 ||daup.map.baidu.com^
 ||blg.map.baidu.com^
 ||mcs.map.baidu.com^
 ||cp01-ocean-2436.epc.baidu.com^
 ||rtc-log.cdn.bcebos.com^
+||browserkernel.baidu.com^
+||graph.baidu.com^
 
-! 迅雷、科大讯飞、Sigmob 等广告与统计模块
+! 迅雷下载引擎组件埋点（内置于小米/OPPO系统下载器）
 ||sandai.net^
+
+! 科大讯飞、Sigmob、中移认证等广告与统计模块
 ||log.iflytek.com^
 ||dc.sigmob.cn^
 ||cgi.qplus.com^
@@ -70,13 +102,20 @@
 ||collect.ux.21cn.com^
 ||log1.cmpassport.com^
 ||sdk.api.bjshcw.com^
+||dispatch-api-online.vemarsdev.com^
 ! 第三方广告分发与流氓弹窗推广联盟（通配符通杀子域及变体）
 ||fxltsbl.com^
 ||*fxltsbl.com^
 
 ! =========================================================
-! 4. 应用专有埋点与非本机厂商推送唤醒
+! 6. 定制输入法、应用专有埋点与跨厂商唤醒
 ! =========================================================
+! 搜狗输入法定制版（小米/三星版）后台数据上报
+||shouji.sogou.com^
+
+! 互联互通设备残留端口探测
+||upnp-api.vivo.com.cn^
+
 ! 什么值得买统计接口
 ||analytics-api.smzdm.com^
 ||analytics-api-01.smzdm.com^
@@ -85,9 +124,9 @@
 ||omgup.xiaojukeji.com^
 ||gulfstream.didistatic.com^
 
-! 魅族推送通道
+! 魅族推送通道（针对非魅族设备应用内置的无效唤醒）
 ||api-push.meizu.com^
 
-! 其他日本/海外 App 遥测与服务端追踪容器
+! 海外/日本 App 遥测与通用服务端追踪容器
 ||profilepassport.jp^
 ||server-side-tagging-xls6abnoha-uc.a.run.app^
