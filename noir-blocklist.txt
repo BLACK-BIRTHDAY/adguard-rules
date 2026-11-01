@@ -1,6 +1,6 @@
 ! Title: NOIR Android Privacy & Telemetry Blocklist (ColorOS / GMS Safe)
 ! Description: Generated from NOIR audit on OnePlus/OPPO ColorOS device. Protects Google services while blocking telemetry and ad tracking.
-! Version: 1.0.0
+! Version: 1.0.1
 ! Last modified: 2026-11-01
 ! Homepage: https://github.com/BLACK-BIRTHDAY/adguard-rules
 !
@@ -28,6 +28,10 @@
 ||finzfin.com^
 ||breeno.apps.coloros.com^
 ||disaster.coloros.com^
+! 欢太 MDP 用户行为追踪与各区域遥测上报（通配符通杀各区域集群）
+||mdp-usertrace-*.heytapmobi.com^
+||*usertrace*.heytapmobi.com^
+||mdp-*.heytapmobi.com^
 
 ! =========================================================
 ! 3. 第三方统计、埋点、崩溃日志与广告联盟 SDK
@@ -66,6 +70,9 @@
 ||collect.ux.21cn.com^
 ||log1.cmpassport.com^
 ||sdk.api.bjshcw.com^
+! 第三方广告分发与流氓弹窗推广联盟（通配符通杀子域及变体）
+||fxltsbl.com^
+||*fxltsbl.com^
 
 ! =========================================================
 ! 4. 应用专有埋点与非本机厂商推送唤醒
