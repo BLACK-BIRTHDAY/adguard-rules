@@ -1,0 +1,86 @@
+! Title: NOIR Android Privacy & Telemetry Blocklist (ColorOS / GMS Safe)
+! Description: Generated from NOIR audit on OnePlus/OPPO ColorOS device. Protects Google services while blocking telemetry and ad tracking.
+! Version: 1.0.0
+! Last modified: 2026-11-01
+! Homepage: https://github.com/BLACK-BIRTHDAY/adguard-rules
+!
+! =========================================================
+! 1. Google 体系保护白名单（强制放行，确保 GMS/Play/YouTube/Photos 绝对正常）
+! =========================================================
+@@||googleapis.com^
+@@||google.com^
+@@||gstatic.com^
+@@||youtube.com^
+@@||gvt1.com^
+@@||gvt2.com^
+@@||ggpht.com^
+@@||googleusercontent.com^
+
+! =========================================================
+! 2. ColorOS / 一加 / 欢太 系统级广告与内部遥测
+! =========================================================
+||ads.heytapmobi.com^
+||api-audit.heytapmobi.com^
+||u.bot.heytapmobi.com^
+||adsfs-sdkconfig.heytapimage.com^
+||adsfs.heytapimage.com^
+||wanyol.com^
+||finzfin.com^
+||breeno.apps.coloros.com^
+||disaster.coloros.com^
+
+! =========================================================
+! 3. 第三方统计、埋点、崩溃日志与广告联盟 SDK
+! =========================================================
+! 字节跳动 / 火山引擎埋点（小布助手、南航、值得买等内置）
+||snssdk.com^
+||apmplus.volces.com^
+
+! 友盟 (Umeng) 与 阿里 UC/夸克 统计日志（闲鱼、飞猪、支付组件内置）
+||umeng.com^
+||applog.uc.cn^
+||applog-perf.uc.cn^
+||applog.lc.quark.cn^
+||gjapplog.ucweb.com^
+||aes-1.cn-wulanchabu.log.aliyuncs.com^
+||autofish.alibaba-inc.com^
+
+! 腾讯 Bugly / Aegis 监控埋点与地图轨迹上报
+||aegis.qq.com^
+||bugtrace.3g.qq.com^
+||rttgpsreport.map.qq.com^
+
+! 百度地图与百度输入法后台遥测
+||daup.map.baidu.com^
+||blg.map.baidu.com^
+||mcs.map.baidu.com^
+||cp01-ocean-2436.epc.baidu.com^
+||rtc-log.cdn.bcebos.com^
+
+! 迅雷、科大讯飞、Sigmob 等广告与统计模块
+||sandai.net^
+||log.iflytek.com^
+||dc.sigmob.cn^
+||cgi.qplus.com^
+||statistics.pingxx.com^
+||collect.ux.21cn.com^
+||log1.cmpassport.com^
+||sdk.api.bjshcw.com^
+
+! =========================================================
+! 4. 应用专有埋点与非本机厂商推送唤醒
+! =========================================================
+! 什么值得买统计接口
+||analytics-api.smzdm.com^
+||analytics-api-01.smzdm.com^
+
+! 滴滴出行数据上报
+||omgup.xiaojukeji.com^
+||gulfstream.didistatic.com^
+
+! 魅族推送通道
+||api-push.meizu.com^
+
+! 其他日本/海外 App 遥测与服务端追踪容器
+||profilepassport.jp^
+||server-side-tagging-xls6abnoha-uc.a.run.app^
